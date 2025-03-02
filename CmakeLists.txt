@@ -1,0 +1,33 @@
+cmake_minimum_required(VERSION 3.20)
+project(logic_scheme)
+
+set(FLTK_ROOT "C:/Program Files (x86)/FLTK/bin")
+find_package(FLTK REQUIRED)
+
+set(TARGET "logic_scheme")
+add_executable(
+    ${TARGET} 
+    src/main.cpp
+    src/Logic_classes.cpp
+    src/Graph_logic.cpp
+
+    src/Graph_lib/Graph.cpp
+    src/Graph_lib/GUI.cpp
+    src/Graph_lib/Window.cpp
+)
+
+target_include_directories(${TARGET} PRIVATE 
+    ${CMAKE_SOURCE_DIR}/src
+    ${FLTK_INCLUDE_DIR}
+)
+
+target_link_directories(${TARGET} PRIVATE
+    ${FLTK_INCLUDE_DIR}/../lib
+)
+
+target_link_libraries(${TARGET} PRIVATE 
+    ${FLTK_LIBRARIES}
+    fltk_jpeg
+    fltk_png
+    fltk_z
+)
