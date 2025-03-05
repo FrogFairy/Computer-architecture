@@ -350,12 +350,12 @@ void Arc::draw_lines () const
   if (fill_color().visibility())  // fill
   {
     fl_color(fill_color().as_int());
-    fl_pie(point(0).x, point(0).y, w - 1, h - 1, -100, 100);
+    fl_pie(point(0).x, point(0).y, w - 1, h - 1, angle1, angle2);
     fl_color(color().as_int());  // reset color
   }
 
   if (color().visibility())
-    fl_arc(point(0).x, point(0).y, w, h, -100, 100);
+    fl_arc(point(0).x, point(0).y, w, h, angle1, angle2);
 }
 
 void draw_mark (Point xy, char c)

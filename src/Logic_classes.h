@@ -45,6 +45,7 @@ namespace Logic
         void add_input(Element& elem);
         
         int get_counts_operand() { return counts_operand; }
+        int is_invert() { return inverted; }
     
     protected:
         bool inverted = 0;
@@ -82,6 +83,11 @@ namespace Logic
         {
             state = !(inputs[0]->get_state());
         }
+    };
+
+    struct GND : public Element
+    {
+        GND() : Element() {}
     };
 }
 

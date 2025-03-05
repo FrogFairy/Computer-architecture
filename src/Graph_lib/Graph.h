@@ -430,8 +430,8 @@ private:
 
 struct Arc : Shape
 {
-  Arc(Point x, int w, int h)
-    : w{w}, h{h}
+  Arc(Point x, int w, int h, int angle1, int angle2)
+    : w{w}, h{h}, angle1{angle1}, angle2{angle2}
   {
     add(x);
   }
@@ -441,6 +441,8 @@ struct Arc : Shape
 private:
   int w;
   int h;
+  int angle1;
+  int angle2;
 };
 
 struct Marked_polyline : Open_polyline
