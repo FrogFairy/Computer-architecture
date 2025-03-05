@@ -5,7 +5,7 @@ using namespace Logic;
 Operation& Element::operator >>(Operation& op) 
 { 
     outputs.push_back(&op); 
-    op.add_input(*this);
+    // op.add_input(*this);
     return op;
 }
 

@@ -15,11 +15,11 @@ namespace Logic
         Operation& operator >>(Operation& op);
 
         bool get_state() const { return state; }
+
+        void update_state();
         
     protected:
         virtual void change_state() {}
-
-        void update_state();
 
         std::vector<Element*> inputs {};
         std::vector<Operation*> outputs {};
@@ -43,6 +43,8 @@ namespace Logic
             : Element(), inverted{inverted}, counts_operand{counts_operand} {}
 
         void add_input(Element& elem);
+        
+        int get_counts_operand() { return counts_operand; }
     
     protected:
         bool inverted = 0;

@@ -48,7 +48,7 @@ public:
 
   virtual void redraw () { pw->redraw(); }
 
-  virtual void set_color(Color back_color, Color frame_color) { pw->color(back_color.as_int(), frame_color.as_int()); }
+  virtual void set_color(Color back_color) { pw->color(back_color.as_int()); }
   virtual void set_fill_color(Color color) { pw->color2(color.as_int()); }
 
   virtual void set_label(const std::string& label) { pw->label(label.c_str()); }

@@ -8,7 +8,11 @@ try
 {
     Graph_lib::Window win{window_point, window_width, window_height, "Logic_scheme"};
     Graph_logic::Source source{Graph_lib::Point(20, 20), elem_width, elem_height};
+    Graph_logic::And and1{Graph_lib::Point(300, 20), int(elem_width * 0.7), elem_height};
     win.attach(source);
+    win.attach(and1);
+    source >> and1;
+    source >> and1 >> Graph_logic::Plug();
     return Graph_lib::gui_main();
 
     // Logic::Source source(1);

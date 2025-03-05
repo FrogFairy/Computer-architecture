@@ -213,6 +213,8 @@ public:
   Color fill_color () const { return fcolor; }
 
   Point point (int i) const { return points[i]; }
+  
+  std::vector<Point> point () const { return points; }
 
   int number_of_points () const { return int(points.size()); }
 
@@ -420,6 +422,21 @@ struct Ellipse : Shape
   void set_minor (int hh);
 
   int minor () const { return h; }
+
+private:
+  int w;
+  int h;
+};
+
+struct Arc : Shape
+{
+  Arc(Point x, int w, int h)
+    : w{w}, h{h}
+  {
+    add(x);
+  }
+
+  void draw_lines () const override;
 
 private:
   int w;
